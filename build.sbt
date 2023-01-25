@@ -31,7 +31,7 @@ ThisBuild / organization := "app.softnetwork"
 
 name := "generic-sequence-api"
 
-ThisBuild / version := "0.1.1"
+ThisBuild / version := "0.1.2"
 
 ThisBuild / scalaVersion := "2.12.15"
 
