@@ -31,7 +31,7 @@ ThisBuild / organization := "app.softnetwork"
 
 name := "generic-sequence-api"
 
-ThisBuild / version := "0.1.2"
+ThisBuild / version := "0.1.3"
 
 ThisBuild / scalaVersion := "2.12.15"
 
@@ -56,7 +56,7 @@ ThisBuild / libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.1",
   "app.softnetwork.api" %% "generic-server-api" % Versions.server,
   "app.softnetwork.api" %% "generic-server-api-testkit" % Versions.server % Test,
-  "app.softnetwork.protobuf" %% "scalapb-extensions" % "0.1.5"
+  "app.softnetwork.protobuf" %% "scalapb-extensions" % "0.1.6"
 ) ++ scalatest
 
 Compile / unmanagedResourceDirectories += baseDirectory.value / "src/main/protobuf"
