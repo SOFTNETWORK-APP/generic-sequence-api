@@ -7,10 +7,13 @@ import Sequence._
 import app.softnetwork.persistence.launch.PersistentEntity
 import app.softnetwork.persistence.message._
 import app.softnetwork.sequence.message._
+import org.slf4j.{Logger, LoggerFactory}
 
 /** Created by smanciot on 19/03/2020.
   */
 class SequenceSpec extends AnyWordSpecLike with InMemoryPersistenceTestKit {
+
+  lazy val log: Logger = LoggerFactory getLogger getClass.getName
 
   import app.softnetwork.persistence.launch.PersistenceGuardian._
 

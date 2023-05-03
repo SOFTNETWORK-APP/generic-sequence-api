@@ -6,6 +6,7 @@ import app.softnetwork.persistence.typed.CommandTypeKey
 import app.softnetwork.persistence.typed.scaladsl.EntityPattern
 import app.softnetwork.sequence.message._
 import app.softnetwork.sequence.persistence.typed.Sequence
+import org.slf4j.{Logger, LoggerFactory}
 
 import scala.concurrent.{ExecutionContextExecutor, Future, Promise}
 import scala.language.implicitConversions
@@ -86,8 +87,12 @@ trait GenericSequenceDao { _: GenericSequenceHandler =>
 
 trait SequenceHandler extends GenericSequenceHandler with SequenceTypeKey
 
-object SequenceHandler extends SequenceHandler
+object SequenceHandler extends SequenceHandler {
+  lazy val log: Logger = LoggerFactory getLogger getClass.getName
+}
 
 trait SequenceDao extends GenericSequenceDao with SequenceHandler
 
-object SequenceDao extends SequenceDao
+object SequenceDao extends SequenceDao {
+  lazy val log: Logger = LoggerFactory getLogger getClass.getName
+}

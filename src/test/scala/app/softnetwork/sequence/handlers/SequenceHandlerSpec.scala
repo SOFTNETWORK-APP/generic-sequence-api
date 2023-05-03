@@ -6,6 +6,7 @@ import app.softnetwork.persistence.scalatest.InMemoryPersistenceTestKit
 import app.softnetwork.sequence.persistence.typed.Sequence
 import org.scalatest.wordspec.AnyWordSpecLike
 import app.softnetwork.sequence.message._
+import org.slf4j.{Logger, LoggerFactory}
 
 import scala.concurrent.ExecutionContextExecutor
 
@@ -15,6 +16,8 @@ class SequenceHandlerSpec
     extends SequenceHandler
     with AnyWordSpecLike
     with InMemoryPersistenceTestKit {
+
+  lazy val log: Logger = LoggerFactory getLogger getClass.getName
 
   import app.softnetwork.persistence.launch.PersistenceGuardian._
 

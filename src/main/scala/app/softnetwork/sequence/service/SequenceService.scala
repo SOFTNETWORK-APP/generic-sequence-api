@@ -10,6 +10,7 @@ import app.softnetwork.sequence.handlers.{GenericSequenceHandler, SequenceHandle
 import app.softnetwork.sequence.message._
 import app.softnetwork.serialization._
 import org.json4s.Formats
+import org.slf4j.{Logger, LoggerFactory}
 
 /** Created by smanciot on 15/05/2020.
   */
@@ -95,6 +96,7 @@ trait SequenceService extends GenericSequenceService with SequenceHandler
 object SequenceService {
   def apply(asystem: ActorSystem[_]): SequenceService = {
     new SequenceService {
+      lazy val log: Logger = LoggerFactory getLogger getClass.getName
       override implicit def system: ActorSystem[_] = asystem
     }
   }
