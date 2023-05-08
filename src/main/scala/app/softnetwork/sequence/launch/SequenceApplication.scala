@@ -3,6 +3,7 @@ package app.softnetwork.sequence.launch
 import akka.actor.typed.ActorSystem
 import app.softnetwork.api.server.launch.Application
 import app.softnetwork.persistence.launch.{PersistenceGuardian, PersistentEntity}
+import app.softnetwork.persistence.schema.SchemaProvider
 import app.softnetwork.sequence.persistence.typed.Sequence
 import com.typesafe.scalalogging.StrictLogging
 
@@ -14,7 +15,7 @@ trait SequenceApplication
     extends Application
     with PersistenceGuardian
     with SequenceRoutes
-    with StrictLogging {
+    with StrictLogging { _: SchemaProvider =>
 
   import app.softnetwork.persistence.launch.PersistenceGuardian._
 
