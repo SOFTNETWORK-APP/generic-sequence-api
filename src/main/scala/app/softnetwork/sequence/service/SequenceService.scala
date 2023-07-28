@@ -4,7 +4,7 @@ import akka.actor.typed.ActorSystem
 import akka.http.scaladsl.model.ContentTypes._
 import akka.http.scaladsl.model.{HttpEntity, HttpResponse, StatusCodes}
 import akka.http.scaladsl.server.{Directives, Route}
-import app.softnetwork.api.server.DefaultComplete
+import app.softnetwork.api.server.{ApiRoute, DefaultComplete}
 import app.softnetwork.persistence.service.Service
 import app.softnetwork.sequence.handlers.{GenericSequenceHandler, SequenceHandler}
 import app.softnetwork.sequence.message._
@@ -17,8 +17,8 @@ import org.slf4j.{Logger, LoggerFactory}
 trait GenericSequenceService
     extends Service[SequenceCommand, SequenceResult]
     with Directives
-    with DefaultComplete {
-  _: GenericSequenceHandler =>
+    with DefaultComplete
+    with ApiRoute { _: GenericSequenceHandler =>
 
   implicit def formats: Formats = commonFormats
 

@@ -31,7 +31,7 @@ ThisBuild / organization := "app.softnetwork"
 
 name := "generic-sequence-api"
 
-ThisBuild / version := "0.2.0.1"
+ThisBuild / version := "0.3.0"
 
 ThisBuild / scalaVersion := "2.12.15"
 
@@ -54,9 +54,9 @@ val scalatest = Seq(
 ThisBuild / libraryDependencies ++= Seq(
   "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf",
   "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.1",
-  "app.softnetwork.api" %% "generic-server-api" % Versions.server,
-  "app.softnetwork.api" %% "generic-server-api-testkit" % Versions.server % Test,
-  "app.softnetwork.protobuf" %% "scalapb-extensions" % "0.1.6"
+  "app.softnetwork.api" %% "generic-server-api" % Versions.genericPersistence,
+  "app.softnetwork.api" %% "generic-server-api-testkit" % Versions.genericPersistence % Test,
+  "app.softnetwork.protobuf" %% "scalapb-extensions" % "0.1.7"
 ) ++ scalatest
 
 Compile / unmanagedResourceDirectories += baseDirectory.value / "src/main/protobuf"
