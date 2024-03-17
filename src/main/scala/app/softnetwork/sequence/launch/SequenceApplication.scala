@@ -7,8 +7,6 @@ import app.softnetwork.persistence.schema.SchemaProvider
 import app.softnetwork.sequence.persistence.typed.Sequence
 import com.typesafe.scalalogging.StrictLogging
 
-import scala.util.{Failure, Success, Try}
-
 /** Created by smanciot on 07/04/2022.
   */
 trait SequenceApplication

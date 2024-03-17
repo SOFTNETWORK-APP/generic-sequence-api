@@ -1,37 +1,14 @@
-import sbt.Resolver
-
-import Common._
-import app.softnetwork.sbt.build._
+import app.softnetwork.*
 
 /////////////////////////////////
 // Defaults
 /////////////////////////////////
 
-app.softnetwork.sbt.build.Publication.settings
-
-/////////////////////////////////
-// Useful aliases
-/////////////////////////////////
-
-addCommandAlias("cd", "project") // navigate the projects
-
-addCommandAlias("cc", ";clean;compile") // clean and compile
-
-addCommandAlias("pl", ";clean;publishLocal") // clean and publish locally
-
-addCommandAlias("pr", ";clean;publish") // clean and publish globally
-
-addCommandAlias("pld", ";clean;local:publishLocal;dockerComposeUp") // clean and publish/launch the docker environment
-
-addCommandAlias("dct", ";dockerComposeTest") // navigate the projects
-
-ThisBuild / shellPrompt := prompt
-
 ThisBuild / organization := "app.softnetwork"
 
 name := "generic-sequence-api"
 
-ThisBuild / version := "0.3.0"
+ThisBuild / version := "0.4.0"
 
 ThisBuild / scalaVersion := "2.12.15"
 
@@ -65,5 +42,5 @@ Test / parallelExecution := false
 
 lazy val root = project.in(file("."))
   .configs(IntegrationTest)
-  .settings(Defaults.itSettings, BuildInfoSettings.settings)
+  .settings(Defaults.itSettings, app.softnetwork.Info.infoSettings)
   .enablePlugins(AkkaGrpcPlugin, BuildInfoPlugin)
