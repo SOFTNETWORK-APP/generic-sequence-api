@@ -8,7 +8,7 @@ ThisBuild / organization := "app.softnetwork"
 
 name := "generic-sequence-api"
 
-ThisBuild / version := "0.4.0"
+ThisBuild / version := "0.5.0"
 
 ThisBuild / scalaVersion := "2.12.15"
 
